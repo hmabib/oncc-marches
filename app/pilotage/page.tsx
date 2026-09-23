@@ -28,6 +28,9 @@ export default function Pilotage() {
             <li>Fournisseur de données : support ICE / LSEG selon licence retenue</li>
             <li>Accès distant au poste : uniquement avec accord de l&apos;utilisateur, interventions consignées</li>
           </ul>
+          <a href="/ONCC_Plateforme_Marches_Presentation.pptx" download className="btn mt-3 w-full bg-oncc-gold font-bold text-oncc-ink hover:bg-oncc-goldlight">
+            ⤓ Télécharger la présentation grand public (PowerPoint)
+          </a>
         </div>
       </div>
       <div className="card p-5 text-sm">

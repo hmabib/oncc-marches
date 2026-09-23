@@ -10,13 +10,14 @@ export const metadata: Metadata = {
 };
 
 const NAV = [
-  { href: "/", label: "Vue quotidienne" },
+  { href: "/", label: "Accueil" },
   { href: "/cacao", label: "Cacao" },
   { href: "/cafe", label: "Café" },
   { href: "/conversions", label: "Changes & conversions" },
   { href: "/grilles", label: "Grilles SPOT" },
   { href: "/historiques", label: "Historiques & exports" },
   { href: "/veille", label: "Veille & analyses" },
+  { href: "/fonctionnalites", label: "Fonctionnalités" },
   { href: "/pilotage", label: "Pilotage & service" },
 ];
 

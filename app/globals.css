@@ -23,3 +23,15 @@ body { @apply bg-oncc-cream text-oncc-ink antialiased; }
 .navlink { @apply rounded-lg px-3 py-2 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 transition whitespace-nowrap; }
 .navlink-active { @apply bg-white text-oncc-deepgreen hover:text-oncc-deepgreen font-semibold; }
 .tri-band { background: linear-gradient(90deg, #007A5E 33.3%, #FCD116 33.3% 66.6%, #CE1126 66.6%); }
+.hero-bg {
+  background:
+    radial-gradient(900px 320px at 85% -10%, rgba(233,164,38,.35), transparent 60%),
+    radial-gradient(700px 300px at 10% 10%, rgba(30,158,90,.35), transparent 60%),
+    linear-gradient(135deg, #0A3D24 0%, #0B6B3A 55%, #0E7A44 100%);
+}
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-track { display: inline-flex; gap: 2.5rem; padding-right: 2.5rem; animation: ticker-scroll 45s linear infinite; white-space: nowrap; }
+.ticker-track:hover { animation-play-state: paused; }
+.step-num {
+  @apply flex h-9 w-9 items-center justify-center rounded-full bg-oncc-gold text-base font-extrabold text-oncc-ink shadow;
+}

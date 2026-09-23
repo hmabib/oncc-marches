@@ -26,7 +26,7 @@ export function PriceChart({ data, series, height = 300, yLabel }: {
           />
           <Legend wrapperStyle={{ fontSize: 12 }} />
           {series.map((s) => (
-            <Line key={s.key} type="monotone" dataKey={s.key} name={s.name} stroke={s.color} strokeWidth={2} dot={false} />
+            <Line key={s.key} type="monotone" dataKey={s.key} name={s.name} stroke={s.color} strokeWidth={2} dot={false} isAnimationActive={false} />
           ))}
         </LineChart>
       </ResponsiveContainer>
@@ -39,7 +39,7 @@ export function AreaSingle({ data, dataKey, color, height = 120 }: { data: any[]
     <div style={{ height }}>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data} margin={{ top: 4, right: 4, bottom: 4, left: 4 }}>
-          <Area type="monotone" dataKey={dataKey} stroke={color} fill={color} fillOpacity={0.18} strokeWidth={2} />
+          <Area type="monotone" dataKey={dataKey} stroke={color} fill={color} fillOpacity={0.18} strokeWidth={2} isAnimationActive={false} />
           <Tooltip formatter={(v: any) => Number(v).toLocaleString("fr-FR")} labelFormatter={(l) => String(l).split("-").reverse().join("/")} />
         </AreaChart>
       </ResponsiveContainer>
