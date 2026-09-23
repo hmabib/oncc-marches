@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Segoe UI", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-oncc-cream text-oncc-ink antialiased; }
+
+.card { @apply bg-white rounded-2xl shadow-card border border-[#EADFC6]; }
+.kpi-num { font-variant-numeric: tabular-nums; }
+.table-compact th { @apply text-[11px] uppercase tracking-wider text-oncc-muted font-semibold px-3 py-2 text-left whitespace-nowrap; }
+.table-compact td { @apply px-3 py-2 text-sm border-t border-[#F0E7D2] kpi-num; }
+.badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition; }
+.btn-primary { @apply bg-oncc-green text-white hover:bg-oncc-deepgreen; }
+.btn-gold { @apply bg-oncc-gold text-oncc-ink hover:bg-oncc-goldlight; }
+.btn-ghost { @apply border border-oncc-green/30 text-oncc-green hover:bg-oncc-green/5; }
+.input { @apply w-full rounded-xl border border-[#D9CDAE] bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-oncc-green/40; }
+.label { @apply text-xs font-semibold uppercase tracking-wider text-oncc-muted; }
+.navlink { @apply rounded-lg px-3 py-2 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 transition whitespace-nowrap; }
+.navlink-active { @apply bg-white text-oncc-deepgreen hover:text-oncc-deepgreen font-semibold; }
+.tri-band { background: linear-gradient(90deg, #007A5E 33.3%, #FCD116 33.3% 66.6%, #CE1126 66.6%); }

@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "source": "ONCC — relevés Douala (exportateurs) & Moungo — grille validée",
+  "methode": "Prix physiques observés (enquêtes) distincts des prix calculés (conversions à terme). Aucune donnée absente convertie en zéro."
+ },
+ "grilles": [
+  {
+   "date": "2026-08-24",
+   "cacao": {
+    "cif": 3234,
+    "fob": 3155,
+    "achatMin": 2650,
+    "achatMax": 2700,
+    "lieu": "Douala"
+   },
+   "arabica": {
+    "cif": 4474,
+    "fob": 4311,
+    "achatMin": null,
+    "achatMax": null,
+    "lieu": "—"
+   },
+   "robusta": {
+    "cif": 2007,
+    "fob": 1901,
+    "achatMin": 1650,
+    "achatMax": 1750,
+    "lieu": "Moungo"
+   }
+  },
+  {
+   "date": "2026-08-28",
+   "cacao": {
+    "cif": 3470,
+    "fob": 3388,
+    "achatMin": 2650,
+    "achatMax": 2800,
+    "lieu": "Douala"
+   },
+   "arabica": {
+    "cif": 4251,
+    "fob": 4093,
+    "achatMin": null,
+    "achatMax": null,
+    "lieu": "—"
+   },
+   "robusta": {
+    "cif": 1981,
+    "fob": 1875,
+    "achatMin": 1650,
+    "achatMax": 1750,
+    "lieu": "Moungo"
+   }
+  },
+  {
+   "date": "2026-09-22",
+   "cacao": {
+    "cif": 3528,
+    "fob": 3444,
+    "achatMin": 2700,
+    "achatMax": 2850,
+    "lieu": "Douala"
+   },
+   "arabica": {
+    "cif": 4388,
+    "fob": 4226,
+    "achatMin": null,
+    "achatMax": null,
+    "lieu": "—"
+   },
+   "robusta": {
+    "cif": 2054,
+    "fob": 1946,
+    "achatMin": 1680,
+    "achatMax": 1780,
+    "lieu": "Moungo"
+   }
+  }
+ ],
+ "parametres": {
+  "differentielCacao": 45,
+  "fretAssuranceCacao": 84,
+  "differentielRobusta": -62,
+  "fretAssuranceRobusta": 108,
+  "differentielArabica": 95,
+  "fretAssuranceArabica": 162,
+  "arrondi": "Arrondi à l'unité FCFA/kg (0 décimale) — règles visibles",
+  "version": "Grille v2026.09 — validée ONCC"
+ }
+}

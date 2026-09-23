@@ -1,0 +1,111 @@
+{
+ "date": "2026-09-22",
+ "cacaoLondres": [
+  {
+   "echeance": "SEP 26",
+   "cours": 4405,
+   "statut": "Spot / proche"
+  },
+  {
+   "echeance": "DEC 26",
+   "cours": 4535,
+   "statut": "Règlement officiel"
+  },
+  {
+   "echeance": "MAR 27",
+   "cours": 4669,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "MAY 27",
+   "cours": 4667,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "JUL 27",
+   "cours": 4648,
+   "statut": "Dernier cours"
+  }
+ ],
+ "cacaoNewYork": [
+  {
+   "echeance": "SEP 26",
+   "cours": 6087,
+   "statut": "Spot / proche"
+  },
+  {
+   "echeance": "DEC 26",
+   "cours": 6213,
+   "statut": "Règlement officiel"
+  },
+  {
+   "echeance": "MAR 27",
+   "cours": 6329,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "MAY 27",
+   "cours": 6373,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "JUL 27",
+   "cours": 6372,
+   "statut": "Dernier cours"
+  }
+ ],
+ "robusta": [
+  {
+   "echeance": "SEP 26",
+   "cours": 3948,
+   "statut": "Spot / proche"
+  },
+  {
+   "echeance": "NOV 26",
+   "cours": 3938,
+   "statut": "Règlement officiel"
+  },
+  {
+   "echeance": "JAN 27",
+   "cours": 3913,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "MAR 27",
+   "cours": 3880,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "MAY 27",
+   "cours": 3856,
+   "statut": "Dernier cours"
+  }
+ ],
+ "arabica": [
+  {
+   "echeance": "SEP 26",
+   "cours": 345.58,
+   "statut": "Spot / proche"
+  },
+  {
+   "echeance": "DEC 26",
+   "cours": 330.18,
+   "statut": "Règlement officiel"
+  },
+  {
+   "echeance": "MAR 27",
+   "cours": 320.98,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "MAY 27",
+   "cours": 318.68,
+   "statut": "Dernier cours"
+  },
+  {
+   "echeance": "JUL 27",
+   "cours": 317.28,
+   "statut": "Dernier cours"
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+[
+ {
+  "date": "2026-09-04",
+  "source": "Barchart / ICE",
+  "titre": "Le cacao consolide après le pic : Londres DEC 4 520 £/t, New York DEC 6 175 $/t",
+  "texte": "Troisième séance de repli sur fond d'offres ivoiriennes abondantes (2,14 Mt cumulées au 30/08, +20 %). Les stocks certifiés ICE remontent vers 3,1 M de sacs. La structure reste en backwardation légère sur le front.",
+  "produit": "Cacao"
+ },
+ {
+  "date": "2026-08-28",
+  "source": "ONCC",
+  "titre": "Prix ONCC du 28 août : cacao CIF 3 470 F/kg, arabica 4 251 F/kg, robusta 1 981 F/kg",
+  "texte": "Achat Douala 2 650–2 800 F/kg (exportateurs), Moungo robusta 1 650–1 750 F/kg. Écarts CIF–FOB : cacao 82 F, arabica 158 F, robusta 106 F.",
+  "produit": "Toutes familles"
+ },
+ {
+  "date": "2026-08-06",
+  "source": "MAAIF / ICE",
+  "titre": "Robusta SEP à 3 891 $/t, arabica SEP à 326,90 c/lb",
+  "texte": "Pluies réduites sur les Hauts Plateaux vietnamiens ; récolte brésilienne Cooxupé à 67,3 %. Stocks arabica au plus bas depuis février 2024 (266 204 sacs).",
+  "produit": "Café"
+ },
+ {
+  "date": "2026-07-31",
+  "source": "Reuters",
+  "titre": "Cacao +6,9 % à Londres (4 074 £), New York +7,4 % (5 490 $) ; arabica à 3,2680 $/lb",
+  "texte": "Ghana : récolte 2026/27 attendue en baisse d'au moins 16 % (météo, cycle, maladies). Signaux de reprise de la demande (Barry Callebaut). El Niño confirmé par l'agence japonaise.",
+  "produit": "Cacao & Café"
+ },
+ {
+  "date": "2026-07-24",
+  "source": "Comunicaffe / USDA",
+  "titre": "USDA : production mondiale 2026/27 record à 189,7 M de sacs (+6 %)",
+  "texte": "Arabica +12 %, robusta −0,7 %. Repli de 2,3 % sur les deux marchés le 23/07 (SEP arabica 309,40 c, robusta 3 708 $). Stocks arabica : 315 883 sacs.",
+  "produit": "Café"
+ },
+ {
+  "date": "2026-07-09",
+  "source": "Yahoo / ICE",
+  "titre": "Envolée parabolique : New York +5,5 %, Londres +5,3 % à un sommet de 9 mois",
+  "texte": "Barry Callebaut signale une demande qui repart (+5,7 % au T3 fiscal). Craintes El Niño « super » (NOAA 67 %) et cherelles faibles en Côte d'Ivoire (1,8 Mt pressentis, −18 %).",
+  "produit": "Cacao"
+ },
+ {
+  "date": "2026-04-04",
+  "source": "NCMC / ICE",
+  "titre": "Creux de cycle : Londres ~2 470 £/t, New York ~3 151 $/t",
+  "texte": "Surplus StoneX 287 000 t pour 2025/26, stocks à 2,36 M de sacs. Après le pic à plus de 12 000 $ (déc. 2024), la tonne a été divisée par trois.",
+  "produit": "Cacao"
+ },
+ {
+  "date": "2026-03-15",
+  "source": "ONCC",
+  "titre": "Campagne caféière 2025-2026 : l'arabica progresse, NWCA 28,6 % des volumes contrôlés",
+  "texte": "Allemagne, Turquie et États-Unis : 88,1 % des exportations d'arabica (Hambourg/Bremerhaven 73 %). Taux d'exécution des contrats 84,47 %.",
+  "produit": "Café"
+ }
+]
