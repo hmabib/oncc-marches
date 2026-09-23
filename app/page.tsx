@@ -44,8 +44,9 @@ export default function Home() {
   // cotations live (Yahoo différé) quand disponibles, sinon référence locale
   const qNY = live?.quotes.cacaoNY.ok ? live.quotes.cacaoNY.data : null;
   const qAra = live?.quotes.arabica.ok ? live.quotes.arabica.data : null;
-  const fxUSD = live?.quotes.usdXaf.ok ? live.quotes.usdXaf.data.price : F.usd_xaf;
-  const fxGBP = live?.quotes.gbpXaf.ok ? live.quotes.gbpXaf.data.price : F.gbp_xaf;
+  const fxUSD = live?.quotes.usdXaf.ok ? live.quotes.usdXaf.data.price : live?.fxFallback ? live.fxFallback.usdXaf : F.usd_xaf;
+  const fxGBP = live?.quotes.gbpXaf.ok ? live.quotes.gbpXaf.data.price : live?.fxFallback ? live.fxFallback.gbpXaf : F.gbp_xaf;
+  const fxLive = !!(live?.quotes.usdXaf.ok || live?.fxFallback);
   const onccLive = live?.oncc.ok ? live.oncc.data : null;
 
   const fcfaL = gbpTonneToFcfaKg(L.close, F.gbp_xaf);
@@ -188,8 +189,8 @@ export default function Home() {
           </div>
         </div>
         <div className="card p-4">
-          <div className="flex items-center justify-between"><h2 className="font-bold text-oncc-ink">Changes & conversions</h2><LiveBadge ok={live?.quotes.usdXaf.ok ?? false} /></div>
-          <p className="text-xs text-oncc-muted">BEAC (fixing 12h Yaoundé) croisé avec le marché des changes en direct • EUR/XAF fixe 655,957</p>
+          <div className="flex items-center justify-between"><h2 className="font-bold text-oncc-ink">Changes & conversions</h2><LiveBadge ok={fxLive} /></div>
+          <p className="text-xs text-oncc-muted">BEAC (fixing 12h Yaoundé){live?.fxFallback && !live?.quotes.usdXaf.ok ? " — relais ExchangeRate-API en direct" : " croisé avec le marché des changes en direct"} • EUR/XAF fixe 655,957</p>
           <div className="mt-3 space-y-2 text-sm">
             <div className="flex justify-between rounded-lg bg-oncc-cream px-3 py-2"><span>USD / XAF</span><strong className="kpi-num">{Number(fxUSD).toLocaleString("fr-FR")} ({fmtPct(((fxUSD - g.usd_xaf) / g.usd_xaf) * 100)})</strong></div>
             <div className="flex justify-between rounded-lg bg-oncc-cream px-3 py-2"><span>GBP / XAF</span><strong className="kpi-num">{Number(fxGBP).toLocaleString("fr-FR")} ({fmtPct(((fxGBP - g.gbp_xaf) / g.gbp_xaf) * 100)})</strong></div>
@@ -283,7 +284,7 @@ export default function Home() {
         <div className="mt-3 grid gap-2 text-sm md:grid-cols-2">
           <div className="rounded-xl bg-oncc-cream p-3"><p className="font-bold">Prix physiques (SPOT) — <LiveBadge ok={!!onccLive} /></p><p className="text-xs text-oncc-muted">Site officiel de l&apos;ONCC, relevés Douala/Moungo. <SourceLine href="https://www.oncc.cm/home">oncc.cm</SourceLine></p></div>
           <div className="rounded-xl bg-oncc-cream p-3"><p className="font-bold">Cacao New York & Arabica — <LiveBadge ok={!!(qNY || qAra)} /></p><p className="text-xs text-oncc-muted">ICE Futures via Yahoo Finance (CC=F, KC=F), cotations différées. <SourceLine href="https://finance.yahoo.com">finance.yahoo.com</SourceLine></p></div>
-          <div className="rounded-xl bg-oncc-cream p-3"><p className="font-bold">Changes USD/XAF, GBP/XAF — <LiveBadge ok={!!live?.quotes.usdXaf.ok} /></p><p className="text-xs text-oncc-muted">Marché des changes en direct, croisé avec le fixing BEAC (EUR/XAF 655,957). <SourceLine href="https://www.beac.int">beac.int</SourceLine></p></div>
+          <div className="rounded-xl bg-oncc-cream p-3"><p className="font-bold">Changes USD/XAF, GBP/XAF — <LiveBadge ok={fxLive} /></p><p className="text-xs text-oncc-muted">{live?.fxFallback && !live?.quotes.usdXaf.ok ? "Relais ExchangeRate-API en direct" : "Marché des changes en direct"}, croisé avec le fixing BEAC (EUR/XAF 655,957). <SourceLine href="https://www.beac.int">beac.int</SourceLine></p></div>
           <div className="rounded-xl bg-oncc-cream p-3"><p className="font-bold">Veille presse — <LiveBadge ok={!!(live?.news.cacao.ok)} /></p><p className="text-xs text-oncc-muted">Google Actualités (cacao, café) + actualités ONCC. Archivage selon licence.</p></div>
         </div>
         <Note><strong>Honêteté des données :</strong> Londres et robusta s&apos;affichent en « référence vérifiée » (reconstitution ancrée ICE du 04/09/2026) tant que la licence temps réel ICE Connect / LSEG n&apos;est pas activée. Chaque écran rappelle contrat, échéance, source, date, heure, fuseau, devise, unité et statut.</Note>

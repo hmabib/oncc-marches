@@ -12,6 +12,7 @@ export type LiveData = {
     gbpXaf: { ok: boolean; data?: any; error?: string };
   };
   news: { cacao: { ok: boolean; data?: any }; cafe: { ok: boolean; data?: any } };
+  fxFallback?: { usdXaf: number; gbpXaf: number; gbpUsd: number; source: string } | null;
 };
 
 let cache: { at: number; data: LiveData } | null = null;

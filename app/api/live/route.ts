@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
-export const revalidate = 900; // rafraîchi toutes les 15 min côté serveur
+export const revalidate = 1800; // rafraîchi toutes les 30 min côté serveur
 export const maxDuration = 30;
+
+// --- Secours changes : ExchangeRate-API (gratuit, sans clé) ---
+async function erFallback() {
+  const j = await fetchJSON("https://open.er-api.com/v6/latest/USD", 8000);
+  const r = j?.rates;
+  if (!r?.XAF || !r?.GBP) throw new Error("ER incomplete");
+  return { usdXaf: r.XAF, gbpXaf: r.XAF / r.GBP, gbpUsd: 1 / r.GBP, source: "ExchangeRate-API (open.er-api.com)" };
+}
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
 
@@ -160,6 +168,13 @@ export async function GET() {
     }
   }
   const val = (r: PromiseSettledResult<any>) => (r.status === "fulfilled" ? { ok: true as const, data: (r as PromiseFulfilledResult<any>).value } : { ok: false as const, error: String((r as PromiseRejectedResult).reason) });
+  // Secours changes via ER-API si Yahoo indisponible
+  let fxFallback: any = null;
+  if (quotes.usdXaf.status === "rejected" || quotes.gbpXaf.status === "rejected") {
+    try {
+      fxFallback = await erFallback();
+    } catch { /* le frontal utilisera la référence BEAC */ }
+  }
   return NextResponse.json({
     fetchedAt,
     sources: {
@@ -169,6 +184,7 @@ export async function GET() {
     },
     oncc: val(oncc),
     quotes: { cacaoNY: val(quotes.cacaoNY), arabica: val(quotes.arabica), usdXaf: val(quotes.usdXaf), gbpXaf: val(quotes.gbpXaf) },
+    fxFallback,
     news: { cacao: val(rssCacao), cafe: val(rssCafe) },
   });
 }
